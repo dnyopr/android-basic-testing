@@ -14,6 +14,17 @@ class NameValidation {
 
     public boolean isNull(String name) {
         type = (name == null);
-        return (type);
+        return type;
+    }
+
+
+    public boolean isNotInRange(String name) {
+        if(name.length()<2||name.length()>20){
+            type = true;
+        }
+        else {
+            type = false;
+        }
+        return type;
     }
 }

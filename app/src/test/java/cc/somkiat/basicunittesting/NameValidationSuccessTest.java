@@ -15,7 +15,7 @@ public class NameValidationSuccessTest {
     @Test
     public void NameIsEmpty(){
         NameValidation nameValidation = new NameValidation();
-        result = !nameValidation.isEmpty("danaya");
+        result = nameValidation.isEmpty("danaya");
         assertFalse(result);
     }
 
@@ -23,6 +23,13 @@ public class NameValidationSuccessTest {
     public void NameIsNull(){
         NameValidation nameValidation = new NameValidation();
         result= nameValidation.isNull("danaya");
+        assertFalse(result);
+    }
+
+    @Test
+    public void nameIsNotInRange(){
+        NameValidation validation = new NameValidation();
+        result = validation.isNotInRange("Danaya");
         assertFalse(result);
     }
 }

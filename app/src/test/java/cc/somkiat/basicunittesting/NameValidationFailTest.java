@@ -25,4 +25,11 @@ public class NameValidationFailTest {
         result = validation.isNull(null);
         assertTrue(result);
     }
+
+    @Test
+    public void nameIsNotInRange(){
+        NameValidation validation = new NameValidation();
+        result = validation.isNotInRange("Hey this is my name that more than 20 alphabets.");
+        assertTrue(result);
+    }
 }
