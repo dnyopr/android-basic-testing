@@ -19,11 +19,19 @@ class NameValidation {
 
 
     public boolean isNotInRange(String name) {
-        if(name.length()<2||name.length()>20){
+        if (name.length() < 2 || name.length() > 20) {
             type = true;
-        }
-        else {
+        } else {
             type = false;
+        }
+        return type;
+    }
+
+    public boolean isNotAlphabet(String name) {
+        if (name.matches("[a-zA-Z]+")) {
+            type = false;
+        } else {
+            type = true;
         }
         return type;
     }

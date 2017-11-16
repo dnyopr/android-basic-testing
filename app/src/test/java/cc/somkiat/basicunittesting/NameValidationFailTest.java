@@ -13,23 +13,30 @@ public class NameValidationFailTest {
     boolean result;
 
     @Test
-    public void nameIsEmpty(){
+    public void nameIsEmpty() {
         NameValidation validation = new NameValidation();
         result = validation.isEmpty("");
         assertTrue(result);
     }
 
     @Test
-    public void nameIsNull(){
+    public void nameIsNull() {
         NameValidation validation = new NameValidation();
         result = validation.isNull(null);
         assertTrue(result);
     }
 
     @Test
-    public void nameIsNotInRange(){
+    public void nameIsNotInRange() {
         NameValidation validation = new NameValidation();
         result = validation.isNotInRange("Hey this is my name that more than 20 alphabets.");
+        assertTrue(result);
+    }
+
+    @Test
+    public void nameIsNotAlphabet() {
+        NameValidation nameValidation = new NameValidation();
+        result = nameValidation.isNotAlphabet("#danaya#");
         assertTrue(result);
     }
 }

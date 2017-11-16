@@ -2,6 +2,8 @@ package cc.somkiat.basicunittesting;
 
 import org.junit.Test;
 
+import java.util.jar.Attributes;
+
 import static junit.framework.Assert.assertFalse;
 import static junit.framework.Assert.assertTrue;
 
@@ -12,24 +14,32 @@ import static junit.framework.Assert.assertTrue;
 public class NameValidationSuccessTest {
 
     boolean result;
+
     @Test
-    public void NameIsEmpty(){
+    public void NameIsEmpty() {
         NameValidation nameValidation = new NameValidation();
         result = nameValidation.isEmpty("danaya");
         assertFalse(result);
     }
 
     @Test
-    public void NameIsNull(){
+    public void NameIsNull() {
         NameValidation nameValidation = new NameValidation();
-        result= nameValidation.isNull("danaya");
+        result = nameValidation.isNull("danaya");
         assertFalse(result);
     }
 
     @Test
-    public void nameIsNotInRange(){
-        NameValidation validation = new NameValidation();
-        result = validation.isNotInRange("Danaya");
+    public void nameIsNotInRange() {
+        NameValidation nameValidation = new NameValidation();
+        result = nameValidation.isNotInRange("danaya");
+        assertFalse(result);
+    }
+
+    @Test
+    public void nameIsNotAlphabet() {
+        NameValidation nameValidation = new NameValidation();
+        result = nameValidation.isNotAlphabet("danaya");
         assertFalse(result);
     }
 }
