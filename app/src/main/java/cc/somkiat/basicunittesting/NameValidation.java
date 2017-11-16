@@ -5,12 +5,15 @@ package cc.somkiat.basicunittesting;
  */
 
 class NameValidation {
+    boolean type;
 
 
-    public boolean isInvalidate(String name) {
-        if(name.isEmpty()){
-            return false;
-        }
-        return true;
+    public boolean isEmpty(String name) {
+        return !name.isEmpty();
+    }
+
+    public boolean isNull(String name) {
+        type = (name != null);
+        return (type);
     }
 }

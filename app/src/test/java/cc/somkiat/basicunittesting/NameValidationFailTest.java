@@ -2,19 +2,27 @@ package cc.somkiat.basicunittesting;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertFalse;
+import static junit.framework.Assert.assertFalse;
+import static junit.framework.Assert.assertTrue;
 
 /**
- * Created by student on 11/10/2017 AD.
+ * Created by Danaya on 11/16/2017.
  */
 
 public class NameValidationFailTest {
+    boolean result;
 
     @Test
-    public void ชื่อเป็นค่าว่าง(){
+    public void nameIsEmpty(){
         NameValidation validation = new NameValidation();
-        boolean result = validation.isInvalidate("");
-        assertFalse("", result);
+        result = validation.isEmpty("");
+        assertFalse(result);
+    }
 
+    @Test
+    public void nameIsNull(){
+        NameValidation validation = new NameValidation();
+        result = validation.isNull(null);
+        assertFalse(result);
     }
 }
