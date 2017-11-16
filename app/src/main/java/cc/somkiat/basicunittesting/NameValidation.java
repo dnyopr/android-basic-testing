@@ -9,11 +9,11 @@ class NameValidation {
 
 
     public boolean isEmpty(String name) {
-        return !name.isEmpty();
+        return name.isEmpty();
     }
 
     public boolean isNull(String name) {
-        type = (name != null);
+        type = (name == null);
         return (type);
     }
 }

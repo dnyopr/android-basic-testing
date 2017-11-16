@@ -16,13 +16,13 @@ public class NameValidationFailTest {
     public void nameIsEmpty(){
         NameValidation validation = new NameValidation();
         result = validation.isEmpty("");
-        assertFalse(result);
+        assertTrue(result);
     }
 
     @Test
     public void nameIsNull(){
         NameValidation validation = new NameValidation();
         result = validation.isNull(null);
-        assertFalse(result);
+        assertTrue(result);
     }
 }

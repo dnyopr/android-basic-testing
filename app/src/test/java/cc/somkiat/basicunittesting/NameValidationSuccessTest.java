@@ -13,16 +13,16 @@ public class NameValidationSuccessTest {
 
     boolean result;
     @Test
-    public void isEmpty(){
+    public void NameIsEmpty(){
         NameValidation nameValidation = new NameValidation();
-        result = nameValidation.isEmpty("danaya");
-        assertTrue(result);
+        result = !nameValidation.isEmpty("danaya");
+        assertFalse(result);
     }
 
     @Test
-    public void isNull(){
+    public void NameIsNull(){
         NameValidation nameValidation = new NameValidation();
         result= nameValidation.isNull("danaya");
-        assertTrue(result);
+        assertFalse(result);
     }
 }
